@@ -6,4 +6,7 @@ if [ "$(shasum boost_1_50_0.tar.bz2 | cut -b -40)" != "${SHA1}" ]; then
 fi
 tar -jxf boost_1_50_0.tar.bz2
 rm -rf $MUMBLE_PREFIX/include/boost_1_50_0
-cp -R boost_1_50_0 $MUMBLE_PREFIX/include/boost_1_50_0
+cd boost_1_50_0
+patch -p1 < ../patches/boost-1.48.0-nil-fix.patch
+cd ..
+mv boost_1_50_0 $MUMBLE_PREFIX/include/
