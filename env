@@ -26,4 +26,8 @@ export PKG_CONFIG_PATH=/usr/lib/pkgconfig/:$MUMBLE_PREFIX/lib/pkgconfig/:$PKG_CO
 export PATH=$MUMBLE_PREFIX/Qt4.8/bin/:$PATH
 export PATH=$MUMBLE_PREFIX/bin:$PATH
 
+# ice path
+export ICE_PREFIX=$MUMBLE_PREFIX/Ice-3.4.2/
+export PATH=$ICE_PREFIX/bin/:$PATH
+
 echo Now in x86-64 MumbleBuild environment

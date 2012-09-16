@@ -1,4 +1,6 @@
 #!/bin/bash
+
+# Mumble
 ./build-pkgconfig.bash
 ./build-openssl.bash
 ./build-libxar.bash
@@ -10,3 +12,8 @@
 ./build-libflac.bash
 ./build-libsndfile.bash
 ./build-protobuf.bash
+
+# Murmur
+./build-berkeleydb.bash
+./build-libmcpp.bash
+./build-zeroc-ice.bash
