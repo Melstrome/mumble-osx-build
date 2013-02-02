@@ -6,7 +6,9 @@ if [ "$(shasum -a 1 db-5.3.21.tar.gz | cut -b -40)" != "${SHA1}" ]; then
 	exit
 fi
 tar -zxf db-5.3.21.tar.gz
-cd db-5.3.21/build_unix
+cd db-5.3.21
+patch -p1 < ../patches/db-5.3.21-clang.patch
+cd build_unix
 ../dist/configure --prefix=$MUMBLE_PREFIX --disable-shared --enable-static --enable-cxx
 make
 make install
